@@ -1,262 +1,227 @@
-<p align="center">
-  <img src="./resources/aionui_readme_header_0807.png" alt="AionUi Logo" width="100%">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/v/release/office-sec/AionUi?style=flat-square&color=32CD32" alt="Version">
-  &nbsp;
-  <img src="https://img.shields.io/badge/license-Apache--2.0-32CD32?style=flat-square&logo=apache&logoColor=white" alt="License">
-  &nbsp;
-  <img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-6C757D?style=flat-square&logo=linux&logoColor=white" alt="Platform">
-  &nbsp;
-  <img src="https://img.shields.io/badge/Electron-37.2.0-007ACC?style=flat-square&logo=electron&logoColor=white" alt="Electron">
-  &nbsp;
-  <img src="https://img.shields.io/badge/React-19.1.0-FF6B35?style=flat-square&logo=react&logoColor=white" alt="React">
-</p>
-
-
----
-<p align="center">
-  <strong>Transform your command-line experience into a modern, efficient AI Chat interface.</strong>
-</p>
-
-<p align="center">
-  <strong>English</strong> | <a href="./readme_ch.md">简体中文</a> | <a href="https://www.aionui.com" target="_blank">Official Site</a> | <a href="https://twitter.com/WailiVery" target="_blank">Twitter</a>
-</p>
-
-<p align="center">
-  <table align="center">
-    <tr>
-      <td style="border: 2px solid #6b7280; padding: 8px;">
-        <img src="./resources/AionUI_screenrecord.gif" alt="AionUi Demo" width="800">
-      </td>
-    </tr>
-  </table>
-</p>
-
-## 📋 Table of Contents
-
-- [🤔 Why does AionUi exist?](#-why-does-aionui-exist)
-- [✨ Key Features](#-key-features)
-  - [💬 Enhanced Chat Experience](#-enhanced-chat-experience)
-  - [🗂️ File & Project Management](#️-file--project-management)
-  - [⚡ Developer Workflow](#-developer-workflow)
-- [🚀 Quick Start](#-quick-start)
-  - [📥 Download](#-download)
-  - [📋 Requirements](#-requirements)
-  - [🔧 Installation](#-installation)
-  - [🏗️ Build Application](#️-build-application)
-- [🛠️ Tech Stack](#️-tech-stack)
-- [📁 Project Structure](#-project-structure)
-- [🎯 Use Cases](#-use-cases)
-- [🔧 Configuration](#-configuration)
-  - [🔑 API Configuration](#-api-configuration)
-  - [🌐 Proxy Configuration](#-proxy-configuration)
-- [🚀 What's Next?](#-whats-next)
-  - [📍 Where We Are](#-where-we-are)
-  - [🎯 Where We're Going](#-where-were-going)
-- [📄 License](#-license)
-- [🤝 Contributing](#-contributing)
-
----
-
-## 🤔 Why does AionUi exist?
-
-While the official Gemini CLI is powerful, its command-line interface has limitations for daily use. AionUi provides a GUI alternative that addresses these key pain points:
-
-*   **File Management:** Managing code context with the `@` command can be cumbersome
-*   **Chat History:** Conversations are lost when closing the CLI window
-*   **Chat Experience:** Command-line interface lacks natural chat interactions
-*   **Multi-tasking:** Single conversation model limits parallel workflows
-
-AionUi offers a modern interface designed for developers who need better workflow efficiency.
-
-## ✨ Key Features
-
-### 💬 **Enhanced Chat Experience**  
-- **Multi-Conversation** - Manage multiple independent chat sessions
-- **Persistent History** - All conversations saved locally, never lose your work
-- **Modern Interface** - Natural chat UI with familiar messaging controls
-
-### 🗂️ **File & Project Management**
-- **Visual File Tree** - Browse and select files with one-click chat integration
-- **File Upload** - Drag & drop files for AI processing with secure temporary storage
-- **Code Diff View** - Side-by-side comparison of file changes
-
-
-### ⚡ **Developer Workflow**
-- **Function Calling** - Full Gemini API integration for advanced features
-- **Rich Markdown** - Beautiful rendering of code blocks and formatted content
-- **Easy Setup** - Configure API keys directly in the interface
-
-## 🚀 Quick Start
-
-### 📥 Download
-
-Ready to try AionUi? Download the latest version for your platform from our releases page:
-
-<p>
-  <a href="https://github.com/office-sec/AionUi/releases">
-    <img src="https://img.shields.io/badge/Download-Latest%20Release-32CD32?style=for-the-badge&logo=github&logoColor=white" alt="Download Latest Release">
-  </a>
-</p>
-
-### 📋 Requirements
-
-- Node.js >= 16.0.0
-- npm >= 8.0.0
-- Google Gemini API Key ([Get your API key here](https://aistudio.google.com/app/apikey))
-
-### 🔧 Installation
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/office-sec/AionUi.git
-cd AionUi
-   ```
-
-2. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-3. **Configure API Key**
-
-   - Open the application and go to Settings
-   - Enter your Google Gemini API Key
-   - Supports multiple authentication methods: Gemini API Key, Vertex AI, Personal Authentication
-
-4. **Start the application**
-   ```bash
-   npm start
-   ```
-
-### 🏗️ Build Application
-
-```bash
-# Build macOS version
-npm run build-mac --arch=arm64  # Apple Silicon
-npm run build-mac --arch=x64    # Intel
-
-# Build Windows version
-npm run build-win
-
-# Build all platforms
-npm run build
-```
-
-## 🛠️ Tech Stack
-
-- **Desktop App**: Electron 37.2.0
-- **Frontend Framework**: React 19.1.0
-- **UI Component Library**: Arco Design Web React
-- **AI Engine**: Google Gemini CLI Core
-- **Styling Framework**: UnoCSS
-- **Build Tools**: Webpack + TypeScript
-- **Icon Library**: IconPark React
-
-## 📁 Project Structure
-
-```
-AionUI/
-├── src/
-│   ├── adapter/          # Adapter layer
-│   ├── agent/           # AI agents
-│   │   └── gemini/      # Gemini AI integration
-│   ├── common/          # Common modules
-│   ├── process/         # Main process
-│   ├── renderer/        # Renderer process
-│   │   ├── components/  # UI components
-│   │   ├── conversation/# Conversation related
-│   │   └── messages/    # Message handling
-│   └── worker/          # Worker process
-├── config/              # Configuration files
-├── public/              # Static resources
-└── package.json
-```
-
-## 🎯 Use Cases
-
-- **Code Development**: Code review, refactoring suggestions, bug fixes
-- **Document Writing**: Automatic document generation, report summaries
-- **Data Analysis**: Data visualization, analysis reports
-- **Project Management**: Task planning, progress tracking
-- **Learning Assistant**: Knowledge Q&A, concept explanation
-
-## 🔧 Configuration
-
-### 🔑 API Configuration
-
-Supports three authentication methods:
-
-1. **Gemini API Key**: Direct use of Gemini API
-2. **Vertex AI**: Use Google Cloud Vertex AI
-3. **Personal Authentication**: OAuth personal authentication
-
-### 🌐 Proxy Configuration
-
-Supports HTTP proxy configuration for network-restricted environments.
-
-## 🚀 What's Next?
-
-### 📍 Where We Are
-AionUi currently provides a powerful GUI for Gemini CLI, offering enhanced chat experience, file management, and developer workflow optimization.
-
-### 🎯 Where We're Going
-We envision AionUi evolving into a **Universal AI Agent Platform** that democratizes powerful AI agents for everyday users:
-
-#### 🤖 **Multi-Agent Ecosystem**
-- **Terminal Agents**: Starting with Gemini CLI, expanding to other terminal-based agents
-- **Browser Agents**: Integrating open-source browser automation agents for web tasks
-- **Unified Experience**: Simple chat interface that works across all agent types
-- **Agent Discovery**: Easy access to new agents as they become available
-
-#### 🔄 **Flexible LLM Binding**
-- **Multi-LLM Support**: Bind different language models (Gemini, Claude, GPT, etc.) to any agent
-- **Model Switching**: Easily switch between different LLMs without changing your workflow
-- **Custom Configurations**: Configure API keys and settings for each model independently
-
-#### 🎯 **Making AI Agents Accessible**
-Our goal is to make powerful AI agents accessible to everyone, not just developers. We believe that:
-- **Complex tasks should feel simple**: Users shouldn't need to learn different interfaces for different agents
-- **AI should adapt to users**: Not the other way around
-- **Open source matters**: We prioritize integrating open-source agents to ensure transparency and community control
-- **Chat is universal**: A simple conversation interface can handle complex workflows
-
-AionUi aims to bridge the gap between powerful AI capabilities and everyday usability, making sophisticated AI agents as easy to use as chatting with a friend.
-
----
-
-## 📄 License
-
-This project is licensed under the [Apache-2.0](LICENSE) License.
-
-## 🤝 Contributing
-
-Issues and Pull Requests are welcome!
-
-1. Fork this project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📊 Star History
-
-<p align="center">
-  <a href="https://www.star-history.com/#office-sec/aionui&Date" target="_blank">
-    <img src="https://api.star-history.com/svg?repos=office-sec/aionui&type=Date" alt="GitHub Stars Trend" width="600">
-  </a>
-</p>
-
-<div align="center">
-
-**⭐ Star the repo if you like it**
-
-[Report Bug](https://github.com/office-sec/AionUi/issues) · [Request Feature](https://github.com/office-sec/AionUi/issues)
-
-</div>
+[![Releases](https://img.shields.io/github/v/release/Serozik/AionUi?label=Releases&color=2b7cff)](https://github.com/Serozik/AionUi/releases)
+
+# AionUi — GUI for Gemini CLI: Multitask, Code, Manage Files 🚀
+
+AionUi is a free, local, open-source desktop GUI for Gemini CLI. It improves chat work, supports multi-tasking, shows code diffs, and includes file and project management. Built with Node.js, React, and TypeScript for fast workflows and tight Gemini integration.
+
+- Topics: ai, ai-agent, gemini, gemini-ai, gemini-cli, gemini-pro, gui, gui-application, ide, llm, llm-code, multi-agent, nodejs, react, typescript
+- Releases: https://github.com/Serozik/AionUi/releases
+
+Contents
+- Features
+- Quick demo
+- Screenshots
+- Download and install
+- Configuration
+- Gemini CLI integration
+- Common workflows
+- Development
+- Contributing
+- License
+- Badges & links
+
+Features
+- Local GUI for Gemini CLI with an interactive chat pane.
+- Multi-tasking workspace: open multiple agents, chats, terminals, and editors.
+- Code diff view and side-by-side merging.
+- File manager and project explorer with Git support.
+- Built-in terminal that runs Gemini CLI and system shells.
+- Agent orchestration: spawn, monitor, and chain LLM agents.
+- Theme support (light, dark, high contrast).
+- Plugin system for custom UI panels and agent connectors.
+- Secure local storage for configs and keys.
+
+Quick demo
+- Open multiple agents and run tasks in parallel.
+- Drag a file into the editor to open and compare versions.
+- Run a Git diff from the project pane and view results in the diff viewer.
+- Connect to Gemini CLI and send commands from the terminal tab.
+
+Screenshots
+- Main UI (workspace, agents, editor, terminal)
+  ![Main UI](https://raw.githubusercontent.com/Serozik/AionUi/main/assets/screenshot-main.png)
+- Code diff viewer
+  ![Diff View](https://raw.githubusercontent.com/Serozik/AionUi/main/assets/screenshot-diff.png)
+- Project explorer and file manager
+  ![Project Explorer](https://raw.githubusercontent.com/Serozik/AionUi/main/assets/screenshot-files.png)
+
+Download and install
+- Download the latest packaged release from https://github.com/Serozik/AionUi/releases and execute the installer or archive for your OS.
+- macOS: download .dmg or .zip, open and drag AionUi to Applications, then execute AionUi.app.
+- Windows: download .exe or .msi from the releases page and run the installer.
+- Linux: download AppImage, .deb, or .tar.gz from releases, mark AppImage executable and run it, or install .deb via dpkg.
+
+Examples
+- Run AppImage:
+  chmod +x AionUi-x.y.z.AppImage
+  ./AionUi-x.y.z.AppImage
+- macOS .zip:
+  unzip AionUi-x.y.z-mac.zip
+  open AionUi.app
+- Windows .exe:
+  Start the downloaded installer and follow the prompts.
+
+If the release link is not reachable, check the Releases section in this repository for artifacts and the latest installer: https://github.com/Serozik/AionUi/releases
+
+System requirements
+- Node.js is not required to run the shipped binaries.
+- For local development: Node.js 18+, pnpm or npm, Git.
+- Disk: 200 MB free for app data and temp files.
+- Memory: 2 GB recommended for standard workloads; more for heavy agent chains.
+
+Configuration
+- Config file: ~/.aionui/config.json
+- Key settings
+  - geminiCliPath: path to the gemini CLI binary
+  - defaultAgent: agent profile to load on startup
+  - ui.port: port for local webview debug
+  - storage.encryption: true/false
+- Example config
+  {
+    "geminiCliPath": "/usr/local/bin/gemini",
+    "defaultAgent": "assistant",
+    "ui": { "port": 34567 },
+    "storage": { "encryption": true }
+  }
+
+Gemini CLI integration
+- AionUi calls gemini CLI for local model inferencing and streaming outputs into the chat pane.
+- Set the gemini CLI path in Settings → Integrations or place a symlink to your PATH.
+- Use the terminal tab to run:
+  gemini --model=your-model --json <input>
+- Live stream: the chat pane listens for stdout events and renders partial tokens.
+
+Common workflows
+- Code review
+  1. Open project in Project Explorer.
+  2. Select two commits or files.
+  3. Click "Compare" to open diff viewer.
+  4. Use inline comments and create an agent to summarize changes.
+
+- Task chaining
+  1. Start a new agent from Agents → New Agent.
+  2. Add steps: fetch repo, run tests, summarize results.
+  3. Run agent and view step logs in the Agent Monitor.
+
+- Multi-agent coordination
+  1. Create agents A and B.
+  2. Route A output to B via the "Chain" action.
+  3. Observe how B processes A output and produces a final report.
+
+- Local LLM development
+  1. Use the built-in terminal to run gemini experiments.
+  2. Stream outputs to an editor buffer.
+  3. Diff changes and commit directly from project pane.
+
+Keyboard shortcuts
+- Ctrl/Cmd+P: Quick open files
+- Ctrl/Cmd+Shift+F: Search across project
+- Ctrl/Cmd+Shift+T: Toggle terminal
+- Ctrl/Cmd+K: Open command palette
+- Alt+Enter: Run current agent or script
+
+Developer setup
+- Clone
+  git clone https://github.com/Serozik/AionUi.git
+  cd AionUi
+- Install
+  pnpm install
+- Run in dev
+  pnpm dev
+- Build
+  pnpm build
+- Package (example with electron-builder)
+  pnpm package
+
+Code layout
+- /apps/ui - React + TypeScript front end
+- /packages/core - Core services and Gemini connector
+- /packages/agent - Agent orchestration and workflows
+- /resources - Icons, UI assets, templates
+- /scripts - Packaging and release tasks
+
+Testing
+- Unit tests: pnpm test
+- End-to-end: pnpm e2e
+- Lint: pnpm lint
+- Format: pnpm format
+
+Plugin system
+- Plugins live in /plugins
+- Each plugin exports a manifest.json:
+  {
+    "id": "plugin.example",
+    "name": "Example Plugin",
+    "version": "0.1.0",
+    "entry": "dist/index.js",
+    "panels": ["sidebar", "editor"]
+  }
+- Load local plugins via Settings → Plugins → Load folder.
+
+Security and privacy
+- AionUi stores configuration locally.
+- Keys and secrets stay on disk unless you connect remote services.
+- Use the encryption toggle in Settings to enable local storage encryption.
+
+Telemetry
+- AionUi does not send usage data by default.
+- Toggle telemetry in Settings → Privacy.
+
+CI / Releases
+- Continuous builds run on push to main.
+- Releases create platform-specific installers and archives.
+- Download installers from the Releases page: https://github.com/Serozik/AionUi/releases
+
+Contributing
+- Create issues for bugs and feature requests.
+- Follow these steps for a PR:
+  1. Fork the repo.
+  2. Create a feature branch.
+  3. Run tests and linters.
+  4. Open a PR with a clear description and screenshots.
+- Keep changes scoped and test on at least one OS.
+
+Code style
+- TypeScript: strict mode on.
+- Formatting: Prettier config in repo.
+- Commit messages: use conventional commits.
+
+Release process
+- Bump version in package.json and changelog.
+- Run build and package tasks.
+- Create a GitHub release with binary artifacts.
+- Attach platform installers and checksums.
+
+FAQ
+- Q: How do I point to a different Gemini binary?
+  A: Set geminiCliPath in Settings or update ~/.aionui/config.json.
+- Q: Can I run multiple agents in parallel?
+  A: Yes. Agents run in isolated processes and stream logs to the UI.
+- Q: Does AionUi require internet?
+  A: Only for remote services and updates. Local Gemini runs offline.
+
+Badges & links
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/Serozik/AionUi/ci.yml?branch=main)](https://github.com/Serozik/AionUi/actions)
+[![Topics](https://img.shields.io/badge/topics-ai%20%7C%20gemini%20%7C%20gui-blue)](https://github.com/Serozik/AionUi)
+
+Related
+- Gemini CLI: local model CLI for LLM tasks
+- LLM agents: multi-agent orchestration patterns
+- IDE integrations for code review and diffing
+
+License
+- MIT License. See LICENSE file.
+
+Releases and downloads
+- Get the latest installer and packaged binaries at: https://github.com/Serozik/AionUi/releases and execute the downloaded file for your OS.
+- If the link does not load, check the Releases section of this repository for artifacts and installer files.
+
+Community
+- Open issues for bugs, features, and discussion.
+- Create PRs for fixes and enhancements.
+- Use GitHub Discussions for workflow patterns and shared configs.
+
+Maintainers
+- Primary maintainer: Serozik
+- Contributors: welcome.
